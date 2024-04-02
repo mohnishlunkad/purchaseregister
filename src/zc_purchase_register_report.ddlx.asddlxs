@@ -1,0 +1,454 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: { typeName: 'Supplier Invoice',
+                typeNamePlural: 'Supplier Invoices',
+                title: { type: #STANDARD, label: 'Purchase Register', value: 'InvoiceNumber' } }
+}
+
+annotate view ZC_PURCHASE_REGISTER_REPORT with
+{
+  @UI.facet: [ { id:       'PurchaseRegister',
+          purpose:         #STANDARD,
+          type:            #IDENTIFICATION_REFERENCE,
+          label:           'Purchase Register',
+          position:        10 }
+         ]
+
+  @Search.defaultSearchElement: true
+  @UI: {  lineItem:       [ { position: 10 } ],
+     identification: [ { position: 10 } ],
+   selectionField: [ { position: 10 } ]
+   }
+  @EndUserText.label: 'Project WBS'
+  ProjectWbs;
+
+  @Search.defaultSearchElement: true
+  @UI: {  lineItem:       [ { position: 20 } ],
+     identification: [ { position: 20 } ],
+   selectionField: [ { position: 20 } ]
+   }
+  @EndUserText.label: 'WBS'
+  Wbs;
+
+  @UI: {  lineItem:       [ { position: 30 } ],
+     identification: [ { position: 30 } ]
+   }
+  @EndUserText.label: 'Fiscal Year'
+  FiscalYear;
+
+  @UI: {  lineItem:       [ { position: 40 } ],
+     identification: [ { position: 40 } ]
+   }
+  @EndUserText.label: 'Posting Period'
+  PostingPeriod;
+
+  @UI: {  lineItem:       [ { position: 50 } ],
+     identification: [ { position: 50 } ],
+     selectionField: [ { position: 30 } ]
+   }
+  @EndUserText.label: 'Invoice Number'
+  InvoiceNumber;
+
+  @UI.hidden: true
+  @EndUserText.label: 'Invoice Number Itm'
+  InvoiceNumberItem;
+
+  @UI: {  lineItem:       [ { position: 60 } ],
+     identification: [ { position: 60 }],
+     selectionField: [ { position: 40 } ]
+   }
+  @EndUserText.label: 'Purchase Invoice Date'
+  PurchaseInvoiceDate;
+
+  @UI: {  lineItem:       [ { position: 70 } ],
+     identification: [ { position: 70 } ]
+   }
+  @EndUserText.label: 'JE Type'
+  JeType;
+
+  @UI: {  lineItem:       [ { position: 80 } ],
+     identification: [ { position: 80 } ]
+   }
+  @EndUserText.label: 'Journal Entry Number'
+  JournalEntryNumber;
+
+  @UI: {  lineItem:       [ { position: 90 } ],
+     identification: [ { position: 90 } ]
+   }
+  @EndUserText.label: 'Migo Number'
+  GRNNumber;
+
+  @UI: {  lineItem:       [ { position: 100 } ],
+     identification: [ { position: 100 } ]
+   }
+  @EndUserText.label: 'MIGO Date'
+  GRNPostingDate;
+
+  @UI: {  lineItem:       [ { position: 110 } ],
+     identification: [ { position: 110 } ]
+   }
+  @EndUserText.label: 'Supplier Code'
+  Supplier;
+
+  @UI: {  lineItem:       [ { position: 120 } ],
+     identification: [ { position: 120 } ]
+   }
+  @EndUserText.label: 'Supplier Name'
+  SupplierName;
+
+  @UI: {  lineItem:       [ { position: 130 } ],
+     identification: [ { position: 130 } ]
+   }
+  @EndUserText.label: 'Supplier Address'
+  SupplierAddress;
+
+  @UI: {  lineItem:       [ { position: 140 } ],
+     identification: [ { position: 140 } ]
+   }
+  @EndUserText.label: 'Material Code'
+  Material;
+
+  @UI: {  lineItem:       [ { position: 150 } ],
+     identification: [ { position: 150 } ]
+   }
+  @EndUserText.label: 'Material Description'
+  MaterialDescription;
+
+  @UI: {  lineItem:       [ { position: 160 } ],
+     identification: [ { position: 160 } ]
+   }
+  @EndUserText.label: 'Material Type'
+  MaterialType;
+
+  @UI: {  lineItem:       [ { position: 170 } ],
+     identification: [ { position: 170 } ]
+   }
+  @EndUserText.label: 'Material Type Description'
+  MaterialTypeDescr;
+
+  @UI: {  lineItem:       [ { position: 180 } ],
+     identification: [ { position: 180 } ]
+   }
+  @EndUserText.label: 'GRN Line Item'
+  GRNItem;
+
+  @UI: {  lineItem:       [ { position: 190 } ],
+     identification: [ { position: 190 } ]
+   }
+  @EndUserText.label: 'Item Quantity'
+  GRNQuantity;
+
+  @UI: {  lineItem:       [ { position: 200 } ],
+     identification: [ { position: 200 } ]
+   }
+  @EndUserText.label: 'UOM'
+  GRNUoM;
+
+  @UI: {  lineItem:       [ { position: 210 } ],
+     identification: [ { position: 210 } ]
+   }
+  @EndUserText.label: 'Net Invoice QUanity'
+  InvoiceQuantity;
+
+  @UI: {  lineItem:       [ { position: 220 } ],
+     identification: [ { position: 220 } ]
+   }
+  @EndUserText.label: 'Unit Price (Base) '
+  UnitPrice;
+
+  @UI: {  lineItem:       [ { position: 230 } ],
+     identification: [ { position: 230 } ]
+   }
+  @EndUserText.label: 'Freight'
+  Freight;
+
+  @UI: {  lineItem:       [ { position: 240 } ],
+     identification: [ { position: 240 } ]
+   }
+  @EndUserText.label: 'Pack and Forward'
+  Pack;
+
+  @UI: {  lineItem:       [ { position: 250 } ],
+     identification: [ { position: 250 } ]
+   }
+  @EndUserText.label: 'Net Rate per Unit'
+  UnitRate;
+
+  @UI: {  lineItem:       [ { position: 260 } ],
+     identification: [ { position: 260 } ]
+   }
+  @EndUserText.label: 'Item Total'
+  InvoiceItemAmount;
+
+  @UI: {  lineItem:       [ { position: 270 } ],
+     identification: [ { position: 270 } ]
+   }
+  @EndUserText.label: 'IGST'
+  IGST;
+
+  @UI: {  lineItem:       [ { position: 280 } ],
+     identification: [ { position: 280 } ]
+   }
+  @EndUserText.label: 'CGST'
+  CGST;
+
+  @UI: {  lineItem:       [ { position: 290 } ],
+     identification: [ { position: 290 } ]
+   }
+  @EndUserText.label: 'SGST'
+  SGST;
+
+  @UI: {  lineItem:       [ { position: 300 } ],
+     identification: [ { position: 300 } ]
+   }
+  @EndUserText.label: 'Total GST'
+  TotalGST;
+
+  @UI: {  lineItem:       [ { position: 310 } ],
+     identification: [ { position: 310 } ]
+   }
+  @EndUserText.label: 'TDS'
+  TDS;
+
+  @UI: {  lineItem:       [ { position: 320 } ],
+     identification: [ { position: 320 } ]
+   }
+  @EndUserText.label: 'Tax Total'
+  TotalTax;
+
+  @UI: {  lineItem:       [ { position: 330 } ],
+       identification: [ { position: 330 } ]
+     }
+  @EndUserText.label: 'HSN Sac'
+  HSNSac;
+
+  @UI: {  lineItem:       [ { position: 340 } ],
+     identification: [ { position: 340 } ]
+   }
+  @EndUserText.label: 'Supplier GST Number'
+  SupplierGSTNo;
+
+  @UI: {  lineItem:       [ { position: 350 } ],
+     identification: [ { position: 350 } ]
+   }
+  @EndUserText.label: 'Supplier PAN Number'
+  SupplierPANNo;
+
+  @UI: {  lineItem:       [ { position: 360 } ],
+     identification: [ { position: 360 } ]
+   }
+  @EndUserText.label: 'Supplier Region'
+  SupplierRegion;
+
+  @UI: {  lineItem:       [ { position: 370 } ],
+     identification: [ { position: 370 } ]
+   }
+  @EndUserText.label: 'Supplier District'
+  SupplierDistrict;
+
+  @UI: {  lineItem:       [ { position: 380 } ],
+     identification: [ { position: 380 } ]
+   }
+  @EndUserText.label: 'Inventory/Exp./Asset GL Code'
+  GRGLAccount;
+
+  @UI: {  lineItem:       [ { position: 390 } ],
+     identification: [ { position: 390 } ]
+   }
+  @EndUserText.label: 'Inventory/Exp./Asset GL Name'
+  GRGLAccountName;
+
+  @UI: {  lineItem:       [ { position: 400 } ],
+     identification: [ { position: 400 } ]
+   }
+  @EndUserText.label: 'Tax Rate'
+  TaxRate;
+
+  @UI: {  lineItem:       [ { position: 410 } ],
+     identification: [ { position: 410 } ]
+   }
+  @EndUserText.label: 'Tax Code'
+  TaxCode;
+
+  @UI: {  lineItem:       [ { position: 420 } ],
+     identification: [ { position: 420 } ]
+   }
+  @EndUserText.label: 'Company Code'
+  CompanyCode;
+
+  @UI: {  lineItem:       [ { position: 430 } ],
+     identification: [ { position: 430 } ]
+   }
+  @EndUserText.label: 'Plant Code'
+  Plant;
+
+  @UI: {  lineItem:       [ { position: 440 } ],
+     identification: [ { position: 440 } ]
+   }
+  @EndUserText.label: 'Purchase Order Type'
+  PurchaseOrderType;
+
+  @UI: {  lineItem:       [ { position: 450 } ],
+     identification: [ { position: 450 } ]
+   }
+  @EndUserText.label: 'Purchase Order Number'
+  PurchaseOrder;
+
+  @UI: {  lineItem:       [ { position: 460 } ],
+     identification: [ { position: 460 } ]
+   }
+  @EndUserText.label: 'Inco Terms'
+  Incoterms;
+
+  @UI: {  lineItem:       [ { position: 470 } ],
+     identification: [ { position: 470 } ]
+   }
+  @EndUserText.label: 'Purchase Order Date'
+  PurchaseOrderDate;
+
+  @UI: {  lineItem:       [ { position: 480 } ],
+     identification: [ { position: 480 } ]
+   }
+  @EndUserText.label: 'PR Number'
+  PurchaseRequisition;
+
+  @UI: {  lineItem:       [ { position: 490 } ],
+     identification: [ { position: 490 } ]
+   }
+  @EndUserText.label: 'PR Date'
+  RequisitionDate;
+
+  @UI: {  lineItem:       [ { position: 500 } ],
+     identification: [ { position: 500 } ]
+   }
+  @EndUserText.label: 'Payment Terms'
+  PaymentTerms;
+
+  @UI: {  lineItem:       [ { position: 510 } ],
+     identification: [ { position: 510 } ]
+   }
+  @EndUserText.label: 'Bank Account'
+  BankAccount;
+
+  @UI: {  lineItem:       [ { position: 520 } ],
+     identification: [ { position: 520 } ]
+   }
+  @EndUserText.label: 'User ID'
+  UserId;
+
+  @UI: { lineItem:       [ { position: 530, importance: #MEDIUM } ],
+           identification: [ { position: 530 } ]
+           }
+  @EndUserText.label: 'Advance'
+  Advance;
+
+  @UI: { lineItem:       [ { position: 540, importance: #MEDIUM } ],
+         identification: [ { position: 540 } ]
+         }
+  @EndUserText.label: 'Retention'
+  Retention;
+
+  @UI: { lineItem:       [ { position: 550, importance: #MEDIUM } ],
+         identification: [ { position: 550 } ]
+         }
+  @EndUserText.label: 'LD Value'
+  LDV;
+
+  @UI: { lineItem:       [ { position: 560, importance: #MEDIUM } ],
+         identification: [ { position: 560 } ]
+         }
+  @EndUserText.label: 'Withheld'
+  WithHeld;
+
+  @UI: { lineItem:       [ { position: 570, importance: #MEDIUM } ],
+         identification: [ { position: 570 } ]
+         }
+  @EndUserText.label: 'Net Payable Value'
+  NetPayableValue;
+
+  @UI: { lineItem:       [ { position: 580, importance: #MEDIUM } ],
+         identification: [ { position: 580 } ]
+         }
+  @EndUserText.label: 'Transporter Name'
+  TransporterName;
+
+  @UI: { lineItem:       [ { position: 590, importance: #MEDIUM } ],
+         identification: [ { position: 590 } ]
+         }
+  @EndUserText.label: 'Transporter GST No.'
+  TransporterGSTNo;
+
+  @UI: { lineItem:       [ { position: 600, importance: #MEDIUM } ],
+         identification: [ { position: 600 } ]
+         }
+  @EndUserText.label: 'E-way Bill No.'
+  EwayBillNo;
+
+  @UI: { lineItem:       [ { position: 610, importance: #MEDIUM } ],
+         identification: [ { position: 610 } ]
+         }
+  @EndUserText.label: 'E-way Bill Date'
+  EwayBillDate;
+
+  @UI: { lineItem:       [ { position: 620, importance: #MEDIUM } ],
+         identification: [ { position: 620 } ]
+         }
+  @EndUserText.label: 'GR/LR No.'
+  GRLRNo;
+
+  @UI: { lineItem:       [ { position: 630, importance: #MEDIUM } ],
+         identification: [ { position: 630 } ]
+         }
+  @EndUserText.label: 'GR/LR Date'
+  GRLRDate;
+
+  @UI: { lineItem:       [ { position: 640, importance: #MEDIUM } ],
+         identification: [ { position: 640 } ]
+         }
+  @EndUserText.label: 'Bank Gurantee (Yes/No)'
+  BankGurantee;
+
+  @UI: { lineItem:       [ { position: 650, importance: #MEDIUM } ],
+         identification: [ { position: 650 } ]
+         }
+  @EndUserText.label: 'Vendor Insurance Certificate (Yes/No)'
+  VenInsrCert;
+
+  @UI: { lineItem:       [ { position: 660, importance: #MEDIUM } ],
+         identification: [ { position: 660 } ]
+         }
+  @EndUserText.label: 'NSEI Action (B/NB)'
+  NSEIAction;
+
+  @UI: { lineItem:       [ { position: 670, importance: #MEDIUM } ],
+         identification: [ { position: 670 } ]
+         }
+  @EndUserText.label: 'Sales Invoice No. (If Billable)'
+  SalesInvoice;
+
+  @UI: { lineItem:       [ { position: 680, importance: #MEDIUM } ],
+         identification: [ { position: 680 } ]
+         }
+  @EndUserText.label: 'Sales Invoice Date'
+  SalesInvoiceDate;
+
+  @UI: { lineItem:       [ { position: 690, importance: #MEDIUM } ],
+         identification: [ { position: 690 } ]
+         }
+  @EndUserText.label: 'DC No. (If NB/FIM Vendor to Customer)'
+  DCNo;
+
+  @UI: { lineItem:       [ { position: 700, importance: #MEDIUM } ],
+         identification: [ { position: 700 } ]
+         }
+  @EndUserText.label: 'Delivery Challan Date'
+  DelvChallanDate;
+
+  @UI: { lineItem:       [ { position: 710, importance: #MEDIUM } ],
+         identification: [ { position: 710 } ]
+         }
+  @EndUserText.label: 'Billing Sch. SI. No.'
+  BillSchNo;
+
+
+}
